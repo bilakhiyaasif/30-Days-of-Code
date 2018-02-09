@@ -1,2 +1,4 @@
 # 30-Days-of-Code
-30 Days of Coding with HackerRank
+### 30 Days of Coding
+### coding every day
+### light-green
