@@ -9,8 +9,10 @@ class Node{
     }
 }
 class Solution{
-  static void levelOrder(Node root){
 
+	static void levelOrder(Node root){
+      //Write your code here
+      
     int h = height(root);
     int i;
     for (i=1; i<=h; i++)
@@ -35,41 +37,42 @@ class Solution{
         return 0;
         else
         {
-          /* compute height of each subtree */
+    
           int lheight = height(root.left);
           int rheight = height(root.right);
 
-          /* use the larger one */
+        
           if (lheight > rheight)
             return(lheight+1);
           else return(rheight+1);
         }
       }
-      public static Node insert(Node root,int data){
-      if(root==null){
-          return new Node(data);
-      }
-      else{
-          Node cur;
-          if(data<=root.data){
-              cur=insert(root.left,data);
-              root.left=cur;
-          }
-          else{
-              cur=insert(root.right,data);
-              root.right=cur;
-          }
-          return root;
-      }
-  }
-  public static void main(String args[]){
-          Scanner sc=new Scanner(System.in);
-          int T=sc.nextInt();
-          Node root=null;
-          while(T-->0){
-              int data=sc.nextInt();
-              root=insert(root,data);
-          }
-          levelOrder(root);
-      }
+
+	public static Node insert(Node root,int data){
+        if(root==null){
+            return new Node(data);
+        }
+        else{
+            Node cur;
+            if(data<=root.data){
+                cur=insert(root.left,data);
+                root.left=cur;
+            }
+            else{
+                cur=insert(root.right,data);
+                root.right=cur;
+            }
+            return root;
+        }
+    }
+    public static void main(String args[]){
+            Scanner sc=new Scanner(System.in);
+            int T=sc.nextInt();
+            Node root=null;
+            while(T-->0){
+                int data=sc.nextInt();
+                root=insert(root,data);
+            }
+            levelOrder(root);
+        }	
 }
